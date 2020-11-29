@@ -1,15 +1,12 @@
-function sumArray(l:number,a:number[],L?:number){
-    if(l==1){
-        console.log(a[L-1]);
-        return;
+function add(arr:number[],ind:number=0,sum:number=0){
+    if(arr[ind]!=undefined){
+        sum+=arr[ind];
+        return add(arr,ind+1,sum);
     }else{
-        L=a.length;
-        a[L-1]+=a[L-l];
-        sumArray(l-1,a,L);
+        return sum;
     }
 }
 
-
-
-var b=[1,2,3,4,5,6,7,8,9,10,11,12,13];
-sumArray(b.length, b);
+var arry = [1,2,3,4,5];
+var s = add(arry);
+console.log(arry, "Sum: ", s);
